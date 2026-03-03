@@ -4,52 +4,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Career Timeline</title>
-<link rel="stylesheet" href="style.css">
+<title>Executive Career Timeline</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #ffffff;
+}
+
+.timeline-section {
+  padding: 120px 20px;
+  background: #f8f9fb;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 100px;
+  font-weight: 700;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Center vertical line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background: #dcdcdc;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Timeline item container */
+.timeline-item {
+  width: 50%;
+  padding: 40px 60px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  display: inline-block;
+  max-width: 500px;
+}
+
+.date {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Timeline dots */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #111;
+  border-radius: 50%;
+  top: 55px;
+  z-index: 2;
+}
+
+.timeline-item.left::after {
+  right: -9px;
+}
+
+.timeline-item.right::after {
+  left: -9px;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 25px;
+    margin-bottom: 60px;
+    left: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-item::after {
+    left: 11px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
 <section class="timeline-section">
-  <div class="timeline-wrapper">
 
-    <h2 class="timeline-heading">Career Journey</h2>
+  <h2 class="timeline-heading">Career Journey</h2>
 
-    <div class="timeline">
+  <div class="timeline">
 
-      <div class="timeline-item left">
-        <div class="card">
-          <span class="date">2024 – Present</span>
-          <h3>Chief Information Security Officer</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Strategic enterprise security leadership.</p>
-        </div>
+    <div class="timeline-item left">
+      <div class="card">
+        <span class="date">2024 – Present</span>
+        <h3>Chief Information Security Officer</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Strategic enterprise security leadership.</p>
       </div>
-
-      <div class="timeline-item right">
-        <div class="card">
-          <span class="date">2021 – 2024</span>
-          <h3>Director of Security Operations</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Built scalable security and governance programs.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item left">
-        <div class="card">
-          <span class="date">2018 – 2021</span>
-          <h3>Security Architect</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Designed enterprise risk frameworks.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item right">
-        <div class="card">
-          <span class="date">2015 – 2018</span>
-          <h3>IT Manager</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Led infrastructure modernization initiatives.</p>
-        </div>
-      </div>
-
     </div>
+
+    <div class="timeline-item right">
+      <div class="card">
+        <span class="date">2021 – 2024</span>
+        <h3>Director of Security Operations</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Built scalable security and governance programs.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="card">
+        <span class="date">2018 – 2021</span>
+        <h3>Security Architect</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Designed enterprise risk frameworks.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="card">
+        <span class="date">2015 – 2018</span>
+        <h3>IT Manager</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Led infrastructure modernization initiatives.</p>
+      </div>
+    </div>
+
   </div>
+
 </section>
 
 </body>
