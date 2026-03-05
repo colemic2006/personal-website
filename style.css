@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
@@ -28,12 +27,25 @@ body {
 
 .section { padding: 90px 0; }
 
-.section.light { background: #f1f5f9; color: #0f172a; }
-.section.dark { background: #0f172a; color: #f1f5f9; }
+.section.light { 
+  background: #f1f5f9; 
+  color: #0f172a; 
+}
+
+.section.dark { 
+  background: #0f172a; 
+  color: #f1f5f9; 
+}
 
 .center { text-align: center; margin-bottom: 50px; }
 
-.timeline { position: relative; max-width: 1000px; margin: auto; }
+/* ===== TIMELINE ===== */
+
+.timeline { 
+  position: relative; 
+  max-width: 1000px; 
+  margin: auto; 
+}
 
 .timeline::before {
   content: "";
@@ -54,15 +66,17 @@ body {
 
 .timeline-card {
   background: #1e293b;
-  color: #ffffff !important;
   padding: 26px;
   border-radius: 12px;
   max-width: 420px;
 }
 
-.timeline-card h3,
-.timeline-card p {
-  color: #ffffff !important;
+/* THIS is the only override needed */
+.section.light .timeline-card,
+.section.light .timeline-card h3,
+.section.light .timeline-card p,
+.section.light .timeline-card span {
+  color: #ffffff;
 }
 
 .timeline-card.left {
@@ -84,16 +98,7 @@ body {
   display: block;
 }
 
-footer { padding: 40px 0; text-align: center; }
-
-/* ===== FORCE TIMELINE TEXT WHITE ===== */
-
-.section.light .timeline-card {
-  color: #ffffff !important;
-}
-
-.section.light .timeline-card h3,
-.section.light .timeline-card p,
-.section.light .timeline-card span {
-  color: #ffffff !important;
+footer { 
+  padding: 40px 0; 
+  text-align: center; 
 }
