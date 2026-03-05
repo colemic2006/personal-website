@@ -20,7 +20,3 @@ window.addEventListener('scroll', () => {
   const scrollPercent = (scrollTop / height) * 100;
   document.querySelector('.scroll-progress').style.width = scrollPercent + "%";
 });
-
-document.getElementById('themeToggle')?.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-});
