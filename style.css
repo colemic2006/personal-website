@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
   background: #0f172a;
-  color: #f1f5f9;
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -93,7 +93,7 @@ body {
 
 .date {
   font-size: 0.8rem;
-  color: #cbd5e1;
+  color: #ffffff;
   margin-bottom: 10px;
   display: block;
 }
@@ -101,4 +101,14 @@ body {
 footer { 
   padding: 40px 0; 
   text-align: center; 
+}
+
+/* HARD OVERRIDE – DO NOT MOVE */
+
+#timeline .timeline-card,
+#timeline .timeline-card h3,
+#timeline .timeline-card p,
+#timeline .timeline-card span,
+#timeline .timeline-card * {
+  color: #ffffff !important;
 }
