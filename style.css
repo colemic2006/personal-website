@@ -44,7 +44,18 @@ body {
 .section.dark { background: #0f172a; }
 .section.light { background: #f8fafc; color: #0f172a; }
 
-.center { text-align: center; margin-bottom: 100px; }
+.center { text-align: center; margin-bottom: 80px; }
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 28px;
+  background: #38bdf8;
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
 
 .timeline {
   position: relative;
@@ -63,22 +74,11 @@ body {
   transform: translateX(-50%);
 }
 
-.timeline-progress {
-  position: absolute;
-  width: 2px;
-  background: #38bdf8;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 0;
-  z-index: 2;
-}
-
 .timeline-row {
   display: grid;
   grid-template-columns: 1fr 60px 1fr;
   align-items: center;
-  margin-bottom: 120px;
+  margin-bottom: 100px;
 }
 
 .timeline-row:nth-child(odd) .timeline-card {
@@ -100,64 +100,50 @@ body {
 }
 
 .timeline-dot {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   background: #0f172a;
   border: 3px solid #38bdf8;
   border-radius: 50%;
-  transition: 0.4s ease;
-}
-
-.timeline-dot.active {
-  box-shadow: 0 0 20px #38bdf8;
-  transform: scale(1.4);
 }
 
 .timeline-card {
   background: #1e293b;
-  color: #f1f5f9;
-  padding: 35px;
-  border-radius: 18px;
-  border: 1px solid #334155;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  padding: 30px;
+  border-radius: 16px;
   max-width: 450px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s ease;
-}
-
-.timeline-card.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .date {
   font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
   color: #94a3b8;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-@media screen and (max-width: 768px) {
-  .timeline-row {
-    grid-template-columns: 40px 1fr;
-  }
+.resume-header {
+  padding: 160px 0 80px;
+  text-align: center;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+}
 
-  .timeline::before,
-  .timeline-progress {
-    left: 20px;
-  }
+.resume-section {
+  padding: 100px 0;
+  background: #f8fafc;
+  color: #0f172a;
+}
 
-  .timeline-line {
-    grid-column: 1;
-  }
+.resume-container {
+  max-width: 800px;
+}
 
-  .timeline-card {
-    grid-column: 2 !important;
-    text-align: left !important;
-  }
+.resume-block {
+  margin-bottom: 40px;
+}
+
+.resume-date {
+  font-size: 0.8rem;
+  color: #64748b;
 }
 
 footer {
