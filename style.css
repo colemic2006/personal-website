@@ -114,25 +114,7 @@ body {
   padding-top: 40px;
 }
 
-/* ================= SERVICES & CONTACT ================= */
-
-#services h2,
-#contact h2 {
-  text-align: center;
-}
-
-#services p,
-#contact p {
-  text-align: left;
-}
-
-#services .narrow,
-#contact .narrow {
-  text-align: left;
-  margin: 0 auto;
-}
-
-/* ================= STABLE TIMELINE ================= */
+/* ================= TIMELINE ================= */
 
 .timeline {
   position: relative;
@@ -173,11 +155,6 @@ body {
   z-index: 3;
 }
 
-/* Hide spacer divs */
-.timeline-row > div:not(.timeline-card) {
-  display: none;
-}
-
 .timeline-card {
   background: #1e293b;
   padding: 30px;
@@ -186,10 +163,20 @@ body {
   min-height: 180px;
   box-sizing: border-box;
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-  transition: all 0.4s ease;
+
+  /* 👇 CRITICAL FIX */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* White text inside cards */
+/* 👇 THIS WAS MISSING */
+.timeline-row.visible .timeline-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* White text */
 .timeline-card,
 .timeline-card h3,
 .timeline-card p,
