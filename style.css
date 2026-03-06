@@ -114,9 +114,14 @@ body {
   padding-top: 40px;
 }
 
-#services,
-#contact {
+#services h2,
+#contact h2 {
   text-align: center;
+}
+
+#services p,
+#contact p {
+  text-align: left;
 }
 
 /* ================= TIMELINE ================= */
