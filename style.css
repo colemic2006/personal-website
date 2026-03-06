@@ -70,7 +70,7 @@ body {
 /* ================= HERO ================= */
 
 .hero {
-  padding: 110px 0 30px 0; /* tightened bottom spacing */
+  padding: 110px 0 10px 0;   /* tightened bottom spacing */
   text-align: center;
 }
 
@@ -78,17 +78,18 @@ body {
   font-size: 3.1rem;
   font-weight: 600;
   letter-spacing: -1px;
-  margin-bottom: 18px;
+  margin: 0 0 18px 0;   /* remove large bottom margin */
 }
 
 .hero p {
   font-size: 1.15rem;
+  margin: 0;            /* prevent margin collapse */
 }
 
 /* ================= SECTIONS ================= */
 
 .section {
-  padding: 80px 0; /* executive density */
+  padding: 80px 0;
 }
 
 .section.light {
@@ -106,6 +107,15 @@ body {
   font-weight: 600;
   letter-spacing: -0.5px;
   margin-bottom: 50px;
+}
+
+/* Specifically tighten About section */
+#about {
+  padding-top: 40px;
+}
+
+#about h2 {
+  margin-top: 0;
 }
 
 .center {
@@ -126,7 +136,7 @@ body {
   margin: auto;
 }
 
-/* Center base line */
+/* Base line */
 .timeline::before {
   content: "";
   position: absolute;
@@ -157,7 +167,7 @@ body {
   position: relative;
 }
 
-/* Timeline node */
+/* Node */
 .timeline-row::after {
   content: "";
   position: absolute;
@@ -176,7 +186,7 @@ body {
   box-shadow: 0 0 14px rgba(56,189,248,0.7);
 }
 
-/* Timeline card */
+/* Cards */
 
 .timeline-card {
   background: #1e293b;
@@ -189,7 +199,7 @@ body {
   transition: all 0.6s cubic-bezier(.2,.65,.3,1);
 }
 
-/* White text inside cards */
+/* White text */
 .section.light .timeline-card,
 .section.light .timeline-card h3,
 .section.light .timeline-card p,
@@ -197,19 +207,19 @@ body {
   color: #ffffff;
 }
 
-/* Reveal animation */
+/* Reveal */
 .timeline-row.visible .timeline-card {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* Hover polish */
+/* Hover */
 .timeline-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(0,0,0,0.45);
 }
 
-/* Typography hierarchy */
+/* Typography */
 
 .timeline-card h3 {
   font-size: 1.5rem;
