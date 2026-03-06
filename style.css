@@ -270,6 +270,13 @@ footer {
   padding-bottom: 50px;
 }
 
+/* Force left alignment in all columns */
+.footer-col {
+  text-align: left;
+}
+
+/* Headings */
+
 .footer-col h3,
 .footer-col h4 {
   margin: 0 0 18px 0;
@@ -293,9 +300,10 @@ footer {
   color: #9ca3af;
 }
 
+/* Remove bullets completely */
 .footer-links {
-  list-style: none;
-  padding: 0;
+  list-style: none;        /* removes bullets */
+  padding: 0;              /* removes left indent */
   margin: 0;
 }
 
@@ -307,6 +315,7 @@ footer {
   text-decoration: none;
   color: #d1d5db;
   font-size: 0.95rem;
+  display: inline-block;
   transition: 0.2s ease;
 }
 
