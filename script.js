@@ -1,8 +1,7 @@
-// Timeline reveal on scroll
-
-const rows = document.querySelectorAll('.timeline-row');
+// Timeline reveal on scroll (stable version)
 
 function revealOnScroll() {
+  const rows = document.querySelectorAll('.timeline-row');
   const triggerBottom = window.innerHeight * 0.85;
 
   rows.forEach(row => {
