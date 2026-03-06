@@ -70,7 +70,7 @@ body {
 /* ================= HERO ================= */
 
 .hero {
-  padding: 110px 0 10px 0;   /* tightened bottom spacing */
+  padding: 110px 0 10px 0;
   text-align: center;
 }
 
@@ -78,12 +78,12 @@ body {
   font-size: 3.1rem;
   font-weight: 600;
   letter-spacing: -1px;
-  margin: 0 0 18px 0;   /* remove large bottom margin */
+  margin: 0 0 18px 0;
 }
 
 .hero p {
   font-size: 1.15rem;
-  margin: 0;            /* prevent margin collapse */
+  margin: 0;
 }
 
 /* ================= SECTIONS ================= */
@@ -110,20 +110,10 @@ body {
   text-align: center;
 }
 
-/* Specifically tighten About section */
 #about {
   padding-top: 40px;
 }
 
-#about h2 {
-  margin-top: 0;
-}
-
-.center {
-  text-align: center;
-}
-
-/* Center Services & Contact */
 #services,
 #contact {
   text-align: center;
@@ -137,7 +127,6 @@ body {
   margin: auto;
 }
 
-/* Base line */
 .timeline::before {
   content: "";
   position: absolute;
@@ -149,18 +138,6 @@ body {
   transform: translateX(-50%);
 }
 
-/* Animated progress line */
-.timeline-progress {
-  position: absolute;
-  width: 2px;
-  background: #38bdf8;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 0;
-  transition: height 0.3s ease;
-}
-
 .timeline-row {
   display: grid;
   grid-template-columns: 1fr 80px 1fr;
@@ -168,7 +145,6 @@ body {
   position: relative;
 }
 
-/* Node */
 .timeline-row::after {
   content: "";
   position: absolute;
@@ -183,12 +159,6 @@ body {
   transition: 0.3s ease;
 }
 
-.timeline-row.visible::after {
-  box-shadow: 0 0 14px rgba(56,189,248,0.7);
-}
-
-/* Cards */
-
 .timeline-card {
   background: #1e293b;
   padding: 30px;
@@ -200,7 +170,7 @@ body {
   transition: all 0.6s cubic-bezier(.2,.65,.3,1);
 }
 
-/* White text */
+/* White text for cards in light section */
 .section.light .timeline-card,
 .section.light .timeline-card h3,
 .section.light .timeline-card p,
@@ -208,25 +178,20 @@ body {
   color: #ffffff;
 }
 
-/* Reveal */
 .timeline-row.visible .timeline-card {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* Hover */
 .timeline-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(0,0,0,0.45);
 }
 
-/* Typography */
-
 .timeline-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 12px;
-  letter-spacing: -0.2px;
 }
 
 .timeline-card p {
@@ -259,5 +224,4 @@ body {
 footer {
   padding: 40px 0;
   text-align: center;
-  font-size: 0.9rem;
 }
