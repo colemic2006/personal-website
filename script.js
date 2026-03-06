@@ -1,56 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Timeline reveal on scroll
 
-  const timelines = document.querySelectorAll(".timeline");
+const rows = document.querySelectorAll('.timeline-row');
 
-  const observers = [];
+function revealOnScroll() {
+  const triggerBottom = window.innerHeight * 0.85;
 
-  timelines.forEach((timeline) => {
+  rows.forEach(row => {
+    const rowTop = row.getBoundingClientRect().top;
 
-    // Add progress line if it doesn't already exist
-    if (!timeline.querySelector(".timeline-progress")) {
-      const progress = document.createElement("div");
-      progress.classList.add("timeline-progress");
-      timeline.appendChild(progress);
+    if (rowTop < triggerBottom) {
+      row.classList.add('visible');
     }
-
-    const rows = timeline.querySelectorAll(".timeline-row");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, {
-      threshold: 0.3
-    });
-
-    rows.forEach(row => observer.observe(row));
-
-    observers.push({ timeline, progress: timeline.querySelector(".timeline-progress") });
-
   });
+}
 
-  // SINGLE scroll listener
-  window.addEventListener("scroll", () => {
-
-    observers.forEach(obj => {
-
-      const rect = obj.timeline.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (rect.top <= windowHeight && rect.bottom >= 0) {
-
-        const scrollPercent = Math.min(
-          Math.max((windowHeight - rect.top) / rect.height, 0),
-          1
-        );
-
-        obj.progress.style.height = scrollPercent * rect.height + "px";
-      }
-
-    });
-
-  });
-
-});
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
