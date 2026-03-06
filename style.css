@@ -127,6 +127,7 @@ body {
   margin: auto;
 }
 
+/* Base vertical line */
 .timeline::before {
   content: "";
   position: absolute;
@@ -138,6 +139,21 @@ body {
   transform: translateX(-50%);
 }
 
+/* Progress line (fixed to avoid layout bugs) */
+.timeline-progress {
+  position: absolute;
+  width: 2px;
+  background: #38bdf8;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0;
+  pointer-events: none; /* prevents scroll interference */
+  z-index: 1;
+}
+
+/* Timeline rows */
+
 .timeline-row {
   display: grid;
   grid-template-columns: 1fr 80px 1fr;
@@ -145,6 +161,7 @@ body {
   position: relative;
 }
 
+/* Node dot */
 .timeline-row::after {
   content: "";
   position: absolute;
@@ -157,7 +174,14 @@ body {
   top: 10px;
   transform: translateX(-50%);
   transition: 0.3s ease;
+  z-index: 2;
 }
+
+.timeline-row.visible::after {
+  box-shadow: 0 0 14px rgba(56,189,248,0.7);
+}
+
+/* Timeline card */
 
 .timeline-card {
   background: #1e293b;
@@ -168,9 +192,11 @@ body {
   transform: translateY(40px);
   opacity: 0;
   transition: all 0.6s cubic-bezier(.2,.65,.3,1);
+  position: relative;
+  z-index: 3;
 }
 
-/* White text for cards in light section */
+/* White text in light sections */
 .section.light .timeline-card,
 .section.light .timeline-card h3,
 .section.light .timeline-card p,
@@ -178,15 +204,19 @@ body {
   color: #ffffff;
 }
 
+/* Reveal animation */
 .timeline-row.visible .timeline-card {
   transform: translateY(0);
   opacity: 1;
 }
 
+/* Hover effect */
 .timeline-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(0,0,0,0.45);
 }
+
+/* Typography */
 
 .timeline-card h3 {
   font-size: 1.5rem;
@@ -206,6 +236,8 @@ body {
   color: #cbd5e1;
   margin-bottom: 14px;
 }
+
+/* Left / Right alignment */
 
 .timeline-card.left {
   grid-column: 1;
