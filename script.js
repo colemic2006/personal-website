@@ -2,12 +2,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const timelines = document.querySelectorAll(".timeline");
 
+  const observers = [];
+
   timelines.forEach((timeline) => {
 
-    // Create progress line
-    const progress = document.createElement("div");
-    progress.classList.add("timeline-progress");
-    timeline.appendChild(progress);
+    // Add progress line if it doesn't already exist
+    if (!timeline.querySelector(".timeline-progress")) {
+      const progress = document.createElement("div");
+      progress.classList.add("timeline-progress");
+      timeline.appendChild(progress);
+    }
 
     const rows = timeline.querySelectorAll(".timeline-row");
 
@@ -23,17 +27,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     rows.forEach(row => observer.observe(row));
 
-    // Animate center line fill
-    window.addEventListener("scroll", () => {
-      const rect = timeline.getBoundingClientRect();
+    observers.push({ timeline, progress: timeline.querySelector(".timeline-progress") });
+
+  });
+
+  // SINGLE scroll listener
+  window.addEventListener("scroll", () => {
+
+    observers.forEach(obj => {
+
+      const rect = obj.timeline.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      const scrollPercent = Math.min(
-        Math.max((windowHeight - rect.top) / rect.height, 0),
-        1
-      );
+      if (rect.top <= windowHeight && rect.bottom >= 0) {
 
-      progress.style.height = scrollPercent * rect.height + "px";
+        const scrollPercent = Math.min(
+          Math.max((windowHeight - rect.top) / rect.height, 0),
+          1
+        );
+
+        obj.progress.style.height = scrollPercent * rect.height + "px";
+      }
+
     });
 
   });
