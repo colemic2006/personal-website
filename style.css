@@ -132,112 +132,84 @@ body {
   margin: 0 auto;
 }
 
-/* ================= TIMELINE ================= */
+/* ================= STABLE TIMELINE ================= */
 
 .timeline {
   position: relative;
-  max-width: 1000px;
+  max-width: 900px;
   margin: auto;
+  padding: 40px 0;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  width: 2px;
-  background: rgba(56,189,248,0.25);
-  top: 0;
-  bottom: 0;
   left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(56,189,248,0.25);
   transform: translateX(-50%);
 }
 
 .timeline-row {
-  display: grid;
-  grid-template-columns: 1fr 60px 1fr;
-  margin-bottom: 100px;
   position: relative;
+  width: 100%;
+  margin: 80px 0;
+  display: flex;
 }
 
 .timeline-row::after {
   content: "";
   position: absolute;
+  left: 50%;
+  top: 20px;
   width: 14px;
   height: 14px;
   background: #0f172a;
   border: 3px solid #38bdf8;
   border-radius: 50%;
-  left: 50%;
-  top: 18px;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 3;
+}
+
+/* Hide spacer divs */
+.timeline-row > div:not(.timeline-card) {
+  display: none;
 }
 
 .timeline-card {
   background: #1e293b;
   padding: 30px;
   border-radius: 14px;
-
-  /* ✅ FIXED */
-  width: 100%;
-  max-width: 420px;
-
+  width: 42%;
   min-height: 180px;
   box-sizing: border-box;
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-  transform: translateY(40px);
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(.2,.65,.3,1);
-  position: relative;
-  z-index: 3;
+  transition: all 0.4s ease;
 }
 
-/* Force white text in timeline cards */
+/* White text inside cards */
 .timeline-card,
 .timeline-card h3,
 .timeline-card p,
-.timeline-card span,
-.timeline-card .date {
+.timeline-card span {
   color: #ffffff;
 }
 
-.timeline-row.visible .timeline-card {
-  transform: translateY(0);
-  opacity: 1;
+.timeline-card.left {
+  margin-right: auto;
+  text-align: right;
+}
+
+.timeline-card.right {
+  margin-left: auto;
+  text-align: left;
 }
 
 .timeline-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(0,0,0,0.45);
-}
-
-.timeline-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.timeline-card p {
-  font-size: 1.05rem;
-}
-
-.date {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-weight: 500;
-  margin-bottom: 14px;
-}
-
-.timeline-card.left {
-  grid-column: 1;
-  justify-self: end;
-  text-align: right;
-}
-
-.timeline-card.right {
-  grid-column: 3;
-  justify-self: start;
-  text-align: left;
 }
 
 /* ================= FOOTER ================= */
@@ -303,8 +275,6 @@ body {
 .footer-links a:hover {
   color: #38bdf8;
 }
-
-/* ICONS */
 
 .footer-social {
   display: flex;
