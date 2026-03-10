@@ -211,12 +211,11 @@ a:hover{
 /* animated cards */
 
 .timeline-card {
-  background: var(--navy-dark);
   padding: 30px;
   border-radius: 14px;
   width: 42%;
   min-height: 180px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 
   opacity:0;
   transform:translateY(30px);
