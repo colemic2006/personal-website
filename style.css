@@ -1,291 +1,307 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mike Cole | Cybersecurity Executive</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ================= BRAND COLORS ================= */
 
-<header class="nav">
-  <div class="container nav-inner">
+:root{
+  --navy:#161436;
+  --navy-dark:#0f0e2a;
+  --purple:#7C5ACF;
+  --purple-light:#A78BFA;
+  --gold:#F2B705;
+  --white:#f8fafc;
+  --gray:#94a3b8;
+}
 
-    <div class="logo">
-      <img src="logo.png" alt="Mike Cole Logo" class="logo-img">
-      <span class="logo-text">Mike Cole</span>
-    </div>
+/* ================= GLOBAL ================= */
 
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#timeline">Career</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#services">Advisory & Consulting</a>
-      <a href="#contact">Contact</a>
-    </nav>
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 17px;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.65;
+}
 
-  </div>
-</header>
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
 
-<section class="hero">
-  <div class="container narrow">
+.narrow {
+  max-width: 750px;
+}
 
-    <div class="hero-logo">
-      <img src="logo.png" alt="Mike Cole Logo">
-    </div>
+/* ================= NAVIGATION ================= */
 
-    <h1>Hi! I'm Mike.</h1>
-    <p>I develop and build high-performing cybersecurity programs.</p>
+.nav {
+  padding: 18px 0;
+  background: var(--navy-dark);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
 
-  </div>
-</section>
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-<section id="about" class="section dark">
-  <div class="container narrow">
-    <h2>About Me</h2>
-    <p>
-      I’ve been in the security industry for over 25 years and have lived and worked all around the world 
-      supporting different programs and projects as an Airman, a DoD contractor, a security analyst, 
-      firewall engineer, security architect, CISO, and executive consultant. Based in Abilene, Texas, 
-      I specialize in working with SMBs and MSPs to build and refine security programs using established 
-      frameworks. Outside of work, I’m a husband, father, and Texas High School football official.
-    </p>
-  </div>
-</section>
+/* logo layout */
 
-<!-- CAREER -->
-<section id="timeline" class="section light">
-  <div class="container">
-    <h2>Career Journey</h2>
-    <div class="timeline">
+.logo {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:600;
+  font-size:1.1rem;
+}
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">2023 – Present</span>
-          <h3>Senior Security Consultant, GuidePoint Security</h3>
-          <p>Focused on building, maturing, and measuring cybersecurity programs.</p>
-        </div>
-        <div></div><div></div>
-      </div>
+.logo-img{
+  height:40px;
+}
 
-      <div class="timeline-row">
-        <div></div><div></div>
-        <div class="timeline-card right">
-          <span class="date">2021 – 2023</span>
-          <h3>Principal Consultant, Coalfire</h3>
-          <p>Built scalable security programs and performed risk assessments.</p>
-        </div>
-      </div>
+.logo-text{
+  color:var(--white);
+}
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">2017 – 2021</span>
-          <h3>Principal Security Consultant</h3>
-          <p>Focused on SMB security program maturity levels and internal offering development for Rapid7.</p>
-        </div>
-        <div></div><div></div>
-      </div>
+/* navigation */
 
-      <div class="timeline-row">
-        <div></div><div></div>
-        <div class="timeline-card right">
-          <span class="date">2013 – 2017</span>
-          <h3>Security Engineer, Security Architect, CISO</h3>
-          <p>Promoted to architect then CISO; built and led cybersecurity programs.</p>
-        </div>
-      </div>
+.nav-links {
+  display: flex;
+  align-items: center;
+}
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">2006 – 2013</span>
-          <h3>DoD Cybersecurity Contractor</h3>
-          <p>DoD cybersecurity consulting and support services worldwide.</p>
-        </div>
-        <div></div><div></div>
-      </div>
+.nav a {
+  color: var(--white);
+  margin-left: 28px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color .2s ease;
+}
 
-      <div class="timeline-row">
-        <div></div><div></div>
-        <div class="timeline-card right">
-          <span class="date">2002 – 2006</span>
-          <h3>Airman, United States Air Force</h3>
-          <p>IT Security Operations career field.</p>
-        </div>
-      </div>
+.nav a:hover{
+  color:var(--purple-light);
+}
 
-    </div>
-  </div>
-</section>
+/* ================= HERO ================= */
 
-<!-- EDUCATION -->
-<section id="education" class="section dark">
-  <div class="container">
-    <h2>Education</h2>
-    <div class="timeline">
+.hero {
+  padding: 110px 0 20px 0;
+  text-align: center;
+}
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">2023</span>
-          <h3>MBA</h3>
-          <p>Information Systems Management, WGU Texas</p>
-        </div>
-        <div></div><div></div>
-      </div>
+.hero-logo img{
+  width:120px;
+  margin-bottom:30px;
+}
 
-      <div class="timeline-row">
-        <div></div><div></div>
-        <div class="timeline-card right">
-          <span class="date">2017</span>
-          <h3>Master's Degree</h3>
-          <p>Management and Leadership</p>
-        </div>
-      </div>
+.hero h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">2013</span>
-          <h3>Master's Degree</h3>
-          <p>Information Security and Assurance</p>
-        </div>
-        <div></div><div></div>
-      </div>
+.hero p{
+  font-size:20px;
+  color:var(--purple-light);
+}
 
-      <div class="timeline-row">
-        <div></div><div></div>
-        <div class="timeline-card right">
-          <span class="date">2010</span>
-          <h3>Bachelor's Degree</h3>
-          <p>General Studies</p>
-        </div>
-      </div>
+/* ================= SECTIONS ================= */
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">2008</span>
-          <h3>Diploma</h3>
-          <p>Scottish History</p>
-        </div>
-        <div></div><div></div>
-      </div>
+.section {
+  padding: 80px 0;
+}
 
-      <div class="timeline-row">
-        <div></div><div></div>
-        <div class="timeline-card right">
-          <span class="date">2004</span>
-          <h3>Associate's Degree</h3>
-          <p>Information Technology</p>
-        </div>
-      </div>
+.section.light {
+  background: var(--white);
+  color: var(--navy);
+}
 
-    </div>
-  </div>
-</section>
+.section.dark {
+  background: var(--navy);
+  color: var(--white);
+}
 
-<!-- CERTIFICATIONS -->
-<section id="certifications" class="section light">
-  <div class="container">
-    <h2>Certifications</h2>
-    <div class="timeline">
+.section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size:32px;
+}
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">Active since 2009</span>
-          <h3>CISSP</h3>
-          <p>Certified Information Systems Security Professional</p>
-        </div>
-        <div></div><div></div>
-      </div>
+/* ================= LINKS ================= */
 
-      <div class="timeline-row">
-        <div></div><div></div>
-        <div class="timeline-card right">
-          <span class="date">Active since 2011</span>
-          <h3>CISA</h3>
-          <p>Certified Information Systems Auditor</p>
-        </div>
-      </div>
+a{
+  color:var(--purple);
+}
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">Active since 2015</span>
-          <h3>CISM</h3>
-          <p>Certified Information Systems Manager</p>
-        </div>
-        <div></div><div></div>
-      </div>
+a:hover{
+  color:var(--purple-light);
+}
 
-      <div class="timeline-row">
-        <div></div><div></div>
-        <div class="timeline-card right">
-          <span class="date">Active since 2025</span>
-          <h3>CCSK</h3>
-          <p>Certificate of Cloud Security Knowledge</p>
-        </div>
-      </div>
+/* ================= TIMELINE ================= */
 
-      <div class="timeline-row">
-        <div class="timeline-card left">
-          <span class="date">Expired in 2017</span>
-          <h3>GIAC</h3>
-          <p>ISO 27001 Specialist Certification</p>
-        </div>
-        <div></div><div></div>
-      </div>
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 0;
+}
 
-    </div>
-  </div>
-</section>
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: rgba(124,90,207,0.35);
+  transform: translateX(-50%);
+}
 
-<!-- SERVICES -->
-<section id="services" class="section">
-  <div class="container narrow">
-    <h2>Advisory & Consulting</h2>
+.timeline-row {
+  position: relative;
+  width: 100%;
+  margin: 80px 0;
+  display: flex;
+}
 
-    <p>
-      From time to time, I take on a limited number of advisory engagements with organizations 
-      looking to strengthen their cybersecurity programs and leadership practices.
-    </p>
+.timeline-row::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  background: var(--navy);
+  border: 3px solid var(--purple);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
 
-    <p>My advisory work typically focuses on:</p>
+.timeline-card {
+  background: var(--navy-dark);
+  padding: 30px;
+  border-radius: 14px;
+  width: 42%;
+  min-height: 180px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
 
-    <ul>
-      <li>Cybersecurity program development, maturity assessments, and framework alignment</li>
-      <li>Security policy development and governance evaluation</li>
-      <li>Operational process improvement and security program scaling</li>
-      <li>Executive and cultural leadership around security and risk</li>
-    </ul>
+.timeline-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.45);
+}
 
-    <p>
-      Because of existing commitments, I am selective about engagements. If your organization 
-      is looking for experienced executive perspective on improving its security program, 
-      I would welcome the opportunity to connect.
-    </p>
+.timeline-card.left {
+  margin-right: auto;
+  text-align: right;
+}
 
-    <p>
-      <strong>Email:</strong> 
-      <a href="mailto:hello@mikecole.info">hello@mikecole.info</a>
-    </p>
+.timeline-card.right {
+  margin-left: auto;
+  text-align: left;
+}
 
-  </div>
-</section>
+.timeline-card span{
+  font-size:14px;
+  color:var(--purple-light);
+  display:block;
+  margin-bottom:8px;
+}
 
-<!-- CONTACT -->
-<section id="contact" class="section light">
-  <div class="container narrow">
-    <h2>Contact</h2>
-    <p>Connect for advisory or leadership opportunities, if you would like a detailed resume, or if you have a football rules question.</p>
-  </div>
-</section>
+.timeline-card h3{
+  margin-top:0;
+}
 
-<footer class="site-footer">
-  <div class="footer-bottom">
-    © 2026 Mike Cole. All rights reserved.
-  </div>
-</footer>
+.timeline-card,
+.timeline-card h3,
+.timeline-card p {
+  color: var(--white);
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+/* ================= LISTS ================= */
+
+ul{
+  padding-left:20px;
+}
+
+li{
+  margin-bottom:8px;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  padding: 60px 0 0 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* grid layout */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 40px;
+}
+
+.footer-col {
+  text-align: left;
+}
+
+/* footer links */
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: var(--purple-light);
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: var(--purple);
+  transform: translateY(-2px);
+}
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ================= FOOTER BOTTOM ================= */
+
+.footer-bottom {
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.9rem;
+  color: var(--gray);
+}
